@@ -8,6 +8,7 @@
 import CoreData
 
 class EntryController {
+    
     // MARK: - Properties
     // Shared Instance
     static let shared = EntryController()
@@ -46,5 +47,4 @@ class EntryController {
         entries.remove(at: indexToDelete)
         CoreDataStack.saveContext()
     }
-    
 }

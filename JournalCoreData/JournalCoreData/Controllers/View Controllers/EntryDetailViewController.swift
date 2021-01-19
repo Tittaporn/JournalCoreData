@@ -22,24 +22,17 @@ class EntryDetailViewController: UIViewController {
     // MARK: - Properties
     var entry: Entry?
     
-    
     // MARK: - Actions
-    
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = titleTextField.text, !title.isEmpty,
               let body = bodyTextView.text, !body.isEmpty else { return }
-        
         if let entry = entry {
-            //update
             EntryController.shared.updateEntry(entry: entry, title: title, body: body)
         } else {
-            //create
             EntryController.shared.createEntry(title: title, body: body)
         }
-        
         navigationController?.popViewController(animated: true)
     }
-    
     
     @IBAction func clearButtonTapped(_ sender: Any) {
         titleTextField.text = ""
@@ -52,5 +45,4 @@ class EntryDetailViewController: UIViewController {
         titleTextField.text = entry.title
         bodyTextView.text = entry.bodytext
     }
-    
 }
